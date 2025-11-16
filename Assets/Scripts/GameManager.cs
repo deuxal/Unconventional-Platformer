@@ -20,4 +20,9 @@ public class GameManager : MonoBehaviour
     {
         CurrentCheckpoint = t;
     }
+
+    public void transport_player(Transform player_pos)
+    {
+
+    }
 }

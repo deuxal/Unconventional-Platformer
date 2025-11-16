@@ -12,4 +12,10 @@ public class Checkpoint : MonoBehaviour
     {
         if (isStartingCheckpoint) GameManager.Instance.SetCheckpoint(transform);
     }
+
+    public void setnewcheckpoint(Transform pos)
+    {
+        
+    }
+
 }
