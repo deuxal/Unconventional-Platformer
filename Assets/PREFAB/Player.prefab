@@ -150,7 +150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layerMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 64
   collision: {fileID: 5629034114034185497}
   grounded: 0
   groundDetectionOffset: {x: 0.35, y: 0}
