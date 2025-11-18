@@ -22,10 +22,10 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D Body { get { return body; } private set { } }
     [SerializeField] CollisionDetection collision;
     [SerializeField] Vector2 moveInput;
+    [SerializeField] AnimatorManager animations;
 
     [Header("Bool")]
-    public bool can_move;
-    public bool can_jump = true;
+    public bool CanMove { get { return animations; } }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -43,11 +43,13 @@ public class PlayerController : MonoBehaviour
         else if (Grounded) Body.gravityScale = normalGravity;
 
         #endregion
+
+        animations.XVelocity = Body.linearVelocityX;
     }
 
     private void FixedUpdate()
     {
-        if (can_move)
+        if (CanMove)
         {
             Body.linearVelocityX = Mathf.Lerp(Body.linearVelocityX,targetSpeed, lerpValue);
         }
@@ -60,7 +62,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnJump(InputValue value)
     {
-        if (can_jump)
+        if (CanMove)
         {
             if (value.isPressed && Grounded)
             {
