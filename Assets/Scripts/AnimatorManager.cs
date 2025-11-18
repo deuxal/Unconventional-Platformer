@@ -5,7 +5,7 @@ public class AnimatorManager : MonoBehaviour
     [SerializeField] Animator animator;
     public bool IsMoving { get { return IsMoving; } set { animator.SetBool("IsMoving", value); } }
     public bool CanMove { get { return animator.GetBool("CanMove"); } }
-    public float XVelocity { get { return XVelocity; } set { animator.SetFloat("xVelocity", value); } }
+    public float XVelocity { get { return animator.GetFloat("xVelocity"); } set { animator.SetFloat("xVelocity", value); } }
 
     // Update is called once per frame
     void Update()
